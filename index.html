@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniNews - Holistic Living & Current Affairs</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f5f6fa;
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://source.unsplash.com/random/1920x1080') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .content-grid {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .category-tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">OmniNews</a>
+            <div class="nav-links">
+                <a href="#politics">Politics</a>
+                <a href="#entertainment">Entertainment</a>
+                <a href="#tech">Tech & AI</a>
+                <a href="#education">Education</a>
+                <a href="#wellness">Wellness</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Stay Informed, Stay Balanced</h1>
+            <p>Your holistic source for current affairs and personal growth</p>
+        </div>
+    </section>
+
+    <main class="content-grid">
+        <!-- Politics -->
+        <article class="article-card" id="politics">
+            <div class="card-image" style="background-image: url('https://source.unsplash.com/random/800x600?politics')"></div>
+            <div class="card-content">
+                <span class="category-tag">Politics</span>
+                <h3>Global Climate Policy Updates</h3>
+                <p>Latest developments in international climate agreements and national implementations...</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+
+        <!-- Tech & AI -->
+        <article class="article-card" id="tech">
+            <div class="card-image" style="background-image: url('https://source.unsplash.com/random/800x600?ai')"></div>
+            <div class="card-content">
+                <span class="category-tag">Tech & AI</span>
+                <h3>Breakthrough in Quantum Machine Learning</h3>
+                <p>Researchers announce new AI models leveraging quantum computing principles...</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+
+        <!-- Wellness -->
+        <article class="article-card" id="wellness">
+            <div class="card-image" style="background-image: url('https://source.unsplash.com/random/800x600?yoga')"></div>
+            <div class="card-content">
+                <span class="category-tag">Wellness</span>
+                <h3>Morning Yoga Routine for Digital Workers</h3>
+                <p>10-minute flow to counteract tech neck and improve posture...</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>About OmniNews</h4>
+                <p>Bridging current affairs with personal development since 2023</p>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <p>Social media links</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactive features here
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
